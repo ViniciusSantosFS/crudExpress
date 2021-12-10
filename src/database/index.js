@@ -5,11 +5,7 @@ const dialectOptions = process.env.NODE_ENV === 'production' ?  {
        require: true,
        rejectUnauthorized: false
     }
-} : {
-    ssl: {
-        require: false
-    }
-}
+} : {}
 
 const sequelize = new Sequelize(process.env.DB, process.env.USER, process.env.PASSWORD, {
     host: process.env.HOST,
