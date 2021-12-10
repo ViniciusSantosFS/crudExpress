@@ -14,6 +14,6 @@ CRUD with express
     - **/edit** is a UPDATE where edit product by Id <br />
 
 
-this is my first express and node js by my own, just reading and search for help when found in trouble
+this is my first express app by my own, just reading and search for help when found in trouble
 
 give me your feedback [Linkedin](https://www.linkedin.com/in/vinicius-santos-8442681b8/)
