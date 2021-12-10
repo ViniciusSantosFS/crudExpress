@@ -1,11 +1,11 @@
-const productModel = require('../models/Product')
+const ProductModel = require('../models/Product')
 
 const create = (req, res) => {
     const {name, description, price} = req.body
 
     if(name.length <= 0) res.status(400).send({error: 'Name cant be undefined'})
 
-    productModel.create({
+    ProductModel.create({
         name,
         description,
         price
@@ -18,7 +18,7 @@ const create = (req, res) => {
 
 
 const list = (req, res) => {
-    productModel.findAll()
+    ProductModel.findAll()
     .then(products => {
         if(products === undefined) res.status(404).send("not to show")
         res.status(200).send(products)
@@ -30,7 +30,7 @@ const list = (req, res) => {
 
 const listOne = (req, res) => {
     const { id } = req.params
-    productModel.findOne({
+    ProductModel.findOne({
         where: {
             id
         }
@@ -49,7 +49,7 @@ const drop = (req, res) => {
     const { id } = req.params
     if (id === undefined) res.status(400).send("bad request")
     
-    productModel.destroy({
+    ProductModel.destroy({
         where: {
             id
         }
@@ -66,7 +66,7 @@ const update = (req, res) => {
     
     if (id === undefined || id.length <= 0) res.status(400).send("bad request")
 
-    productModel.update({
+    ProductModel.update({
         name, description, price
     }, {
         where: {
