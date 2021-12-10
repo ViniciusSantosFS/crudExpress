@@ -1,17 +1,17 @@
-PROJECTS CRUD
+## PRODUCTS CRUD
 
-crud with express 
+CRUD with express 
 
-try clone this repository and use npm to install dependencies
+**Try clone this repository and use npm install to install project dependencies**
 
 ## Use npm start command to start server
 
 **Routes:** 
-    - /create is a POST where you should pass name not null, description allow null, price allow null
-    - /list is a GET where list all products
-    - /list/:id is a GET where list product by Id
-    - /delete/:id? is a DELETE where delete product by Id
-    - /edit is a UPDATE where edit product by Id
+    - */create* is a POST where you should pass name not null, description allow null, price allow null <br />
+    - */list* is a GET where list all products <br />
+    - */list/:id* is a GET where list product by Id <br />
+    - */delete/:id?* is a DELETE where delete product by Id <br />
+    - */edit* is a UPDATE where edit product by Id <br />
 
 
 this is my first express and node js by my own, just reading and search for help when found in trouble
