@@ -2,8 +2,9 @@ const { Sequelize } = require('sequelize');
 
 const dialectOptions = process.env.NODE_ENV === 'production' ?  {
    ssl: {
-       require: true
-   }
+       require: true,
+       rejectUnauthorized: false
+    }
 } : {
     ssl: {
         require: false
