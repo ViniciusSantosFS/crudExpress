@@ -9,7 +9,7 @@ CRUD with express
 **Routes:** <br/>
     **##USERS**
     - **user/create** is a POST where you should pass username, email, password 
-    - **user/login** is a POST where you should pass email and password, and will recive a token if everything working right
+    - **user/login** is a POST where you should pass email and password, and will recive a token if everything works right
     **##PRODUCTS**
     - **product/create** is a POST where you should pass name not null, description allow null, price allow null <br />
     - **product/list** is a GET where list all products <br />
