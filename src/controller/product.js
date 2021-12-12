@@ -20,7 +20,7 @@ const create = (req, res) => {
 const list = (req, res) => {
     ProductModel.findAll()
     .then(products => {
-        if(products === undefined) res.status(404).send("not to show")
+        if(products === undefined) res.status(404).send({error: "not to show"})
         res.status(200).send(products)
     }).catch(error => {
         res.status(500).send({error})
@@ -36,7 +36,7 @@ const listOne = (req, res) => {
         }
     })
     .then(product => {
-        if(product === undefined) res.status(404).send("not found")
+        if(product === undefined) res.status(404).send({error: "not found"})
         res.status(200).send(product)
     }).catch(error => {
         res.status(500).send({error})
@@ -47,7 +47,7 @@ const listOne = (req, res) => {
 
 const drop = (req, res) => {
     const { id } = req.params
-    if (id === undefined) res.status(400).send("bad request")
+    if (id === undefined) res.status(400).send({error: "bad request"})
     
     ProductModel.destroy({
         where: {
@@ -55,7 +55,7 @@ const drop = (req, res) => {
         }
     }).then((product) => {
         console.log(product)
-        if (product === 0) res.status(404).send("no product to delete")
+        if (product === 0) res.status(404).send({error: "no product to delete"})
         res.status(200).send("success")
     }).catch(error => res.status(500).send({error}))
 }
@@ -64,7 +64,7 @@ const drop = (req, res) => {
 const update = (req, res) => {
     const {id, name, description, price} = req.body
     
-    if (id === undefined || id.length <= 0) res.status(400).send("bad request")
+    if (id === undefined || id.length <= 0) res.status(400).send({error: "bad request"})
 
     ProductModel.update({
         name, description, price
@@ -73,7 +73,7 @@ const update = (req, res) => {
             id
         }
     }).then(() => {
-        res.status(200).send("success")
+        res.status(200).send({message: "success"})
     }).catch(error => {
         res.status(500).send({error})
     })
