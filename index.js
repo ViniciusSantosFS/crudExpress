@@ -13,12 +13,12 @@ app.use('/api', routes)
 sequelize.sync()
 
 routes.use((req, res) => {
-    res.status(404).send('404 not found')
+    res.status(404).send({error: '404 not found'})
 })
 
 routes.use((error, req, res, next) => {
     console.log(error.stack)
-    res.status(500).send("Something went wrong with server =/")
+    res.status(500).send({error: "Something went wrong with server =/"})
 })
 
 app.listen(PORT, () => {
