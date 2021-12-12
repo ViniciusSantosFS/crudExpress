@@ -11,5 +11,6 @@ routes.delete('/product/delete/:id?', productController.drop)
 routes.put('/product/edit', productController.update)
 
 routes.post('/user/create', userController.create)
+routes.post('/user/login', userController.auth)
 
 module.exports = routes
