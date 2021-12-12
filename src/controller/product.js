@@ -54,7 +54,6 @@ const drop = (req, res) => {
             id
         }
     }).then((product) => {
-        console.log(product)
         if (product === 0) res.status(404).send({error: "no product to delete"})
         res.status(200).send("success")
     }).catch(error => res.status(500).send({error}))
