@@ -61,7 +61,6 @@ const auth = async (req, res) => {
 
     try{
         const user = await hasUserRegister(username, email)
-        console.log(user)
         if(user === null) res.status(400).send({error: 'email is incorret'})
         
         const isPasswordRight = await comparePassword(password, user.password)
